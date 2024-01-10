@@ -17,3 +17,13 @@ body {
 	z-index: 5;
 	right: 26.09%;
 }
+.hero-text-shadow {
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
+}
+.primary-button {
+	padding: 0.5rem 2rem 0.5rem 2rem;
+	background-color: white;
+	color: black;
+	width: fit-content;
+	border-radius: 4px;
+}
