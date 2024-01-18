@@ -1,9 +1,12 @@
+'use client';
 import Image from 'next/image';
 import FeaturedFilm from './featured-film';
 import localFont from 'next/font/local';
 import { Metadata } from 'next';
 import Navigation from './navigation';
-import PopularTitles from './popular-titles/popular-titles';
+import Posters from './shows/posters';
+import ShowDetail from './shows/show-detail';
+import { useSearchParams } from 'next/navigation';
 
 const NetflixSans = localFont({
 	src: [
@@ -26,13 +29,17 @@ const NetflixSans = localFont({
 });
 
 export default function Home() {
+	const searchParams = useSearchParams();
+
 	return (
-		<div className="pb-80">
+		<div className='pb-80'>
+			<ShowDetail showId={searchParams.get('show')} />
+
 			<Navigation />
 			<FeaturedFilm />
-			<div className="content w-full absolute z-10 -mt-[7%] max-sm:-mt-[22%]">
-				<div className="titles-overlay absolute"></div>
-				<PopularTitles />
+			<div className='content w-full absolute z-10 -mt-[7%] max-sm:-mt-[22%]'>
+				<div className='titles-overlay absolute'></div>
+				<Posters />
 			</div>
 		</div>
 	);
