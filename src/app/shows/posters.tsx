@@ -5,7 +5,7 @@ import { cancelSync, motion } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Link from 'next/link';
 
-import { FreeMode } from 'swiper/modules';
+import { FreeMode, Mousewheel } from 'swiper/modules';
 import 'swiper/css/free-mode';
 import 'swiper/css';
 
@@ -29,7 +29,7 @@ export default function Posters() {
 					freeMode={true}
 					loop={true}
 					mousewheel={true}
-					modules={[FreeMode]}
+					modules={[FreeMode, Mousewheel]}
 				>
 					{popularTitles.map((title) => (
 						<SwiperSlide key={title.id}>

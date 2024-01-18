@@ -9,8 +9,11 @@ export default function ShowDetail(props: any) {
 	if (show) {
 		return (
 			<div className='w-full h-full fixed z-40 flex items-end justify-center'>
-				<div className='absolute z-50 w-3/6 h-[90%] mt-auto text-white show-popup'>
-					<img src='' />
+				<div className='absolute z-50 w-3/6 h-[90%] mt-auto text-white show-popup rounded-md'>
+					<img
+						src={show.thumb.src}
+						className='rounded-t-md'
+					/>
 					<h1>{show.title}</h1>
 				</div>
 				<div className='w-full h-full fixed z-40 bg-black bg-opacity-70'></div>
