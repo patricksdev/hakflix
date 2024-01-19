@@ -2,7 +2,7 @@
 import FeaturedFilm from './featured-film';
 import localFont from 'next/font/local';
 import Navigation from './navigation';
-import Posters from './shows/posters';
+import Shows from './shows/page';
 import { useEffect } from 'react';
 import Footer from './footer';
 
@@ -41,7 +41,7 @@ export default function Home() {
 					id='popular'
 				>
 					<div className='titles-overlay absolute'></div>
-					<Posters />
+					<Shows />
 				</div>
 			</div>
 			<Footer />

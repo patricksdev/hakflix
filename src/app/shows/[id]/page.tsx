@@ -2,33 +2,34 @@
 import { useRouter } from 'next/navigation';
 import { hakflixShow } from '../../../../public/shows/shows';
 import shows from '../../../../public/shows/shows';
-import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import close from '../../../public/icons/close.svg';
+import close from '../../../../public/icons/close.svg';
 import { useRef } from 'react';
 
 import { useSearchParams } from 'next/navigation';
 
-export default function Page() {
-	console.log('HILLFE');
+export default function Page({ params: { id } }: { params: { id: string } }) {
 	const router = useRouter();
-	const searchParams = useSearchParams();
+	const show = shows.find((show) => show.id.toString() == id);
 
-	const [show, setshow] = useState<hakflixShow>();
+	if (show) {
+		document.body.style.overflow = 'hidden';
+	}
+
 	const dialogRef = useRef<HTMLDivElement>(null);
 
-	useEffect(() => {
-		const query = searchParams.get('show');
+	// useEffect(() => {
+	// 	const query = searchParams.get('show');
 
-		async function findShow() {
-			const show = shows.find((show) => show.id.toString() == query);
-			setshow(shows.find((show) => show.id.toString() == query));
-		}
-		if (query) {
-			findShow();
-			document.body.style.overflow = 'hidden';
-		}
-	});
+	// 	async function findShow() {
+	// 		const show = shows.find((show) => show.id.toString() == query);
+	// 		setshow(shows.find((show) => show.id.toString() == query));
+	// 	}
+	// 	if (query) {
+	// 		findShow();
+	// 		document.body.style.overflow = 'hidden';
+	// 	}
+	// });
 
 	function redirectHome() {
 		router.back();

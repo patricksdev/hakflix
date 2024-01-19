@@ -20,7 +20,7 @@ const posteTitleVariants = {
 	visible: { opacity: 1 },
 	hidden: { opacity: 0 },
 };
-export default function Posters() {
+export default function Shows() {
 	const [rndShows, setrndShows] = useState<hakflixShow[] | []>();
 
 	useEffect(() => {
@@ -43,7 +43,7 @@ export default function Posters() {
 						rndShows.map((show, index) => (
 							<SwiperSlide key={show.id}>
 								<Link
-									href={'?show=' + show.id}
+									href={'/shows/' + show.id}
 									scroll={false}
 								>
 									<motion.div
