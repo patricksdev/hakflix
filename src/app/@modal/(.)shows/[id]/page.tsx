@@ -4,38 +4,19 @@ import { hakflixShow } from '../../../../../public/shows/shows';
 import shows from '../../../../../public/shows/shows';
 import Image from 'next/image';
 import close from '../../../../../public/icons/close.svg';
-import { useEffect, useRef } from 'react';
-
-import { useSearchParams } from 'next/navigation';
+import { useEffect, useRef, useState } from 'react';
 
 export default function Page({ params: { id } }: { params: { id: string } }) {
+	const [show, setShow] = useState<hakflixShow>();
 	const router = useRouter();
-	const show = shows.find((show) => show.id.toString() == id);
-
-	// if (show) {
-	// 	document.body.style.overflow = 'hidden';
-	// }
-
 	const dialogRef = useRef<HTMLDivElement>(null);
 
-	// useEffect(() => {
-	// 	// const query = searchParams.get('show');
-
-	// 	// async function findShow() {
-	// 	// 	const show = shows.find((show) => show.id.toString() == query);
-	// 	// 	setshow(shows.find((show) => show.id.toString() == query));
-	// 	}
-	// 	if (show) {
-	// 		findShow();
-	// 		document.body.style.overflow = 'hidden';
-	// 	}
-	// });
-
 	useEffect(() => {
+		setShow(shows.find((show) => show.id.toString() == id));
 		if (show) {
 			document.body.style.overflow = 'hidden';
 		}
-	});
+	}, []);
 
 	function redirectHome() {
 		router.back();
