@@ -30,7 +30,7 @@ export default function Shows() {
 	return (
 		<div className="absolute px-14 max-sm:px-8 flex flex-col popular-titles w-full">
 			<h2 className="text-2xl max-sm:text-xl font-bold">
-				Popular on Hakflix
+				Beliebt auf Hakflix
 			</h2>
 			<div className="posters w-full h-full">
 				<Swiper
