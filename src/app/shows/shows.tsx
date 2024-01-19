@@ -23,10 +23,10 @@ const posteTitleVariants = {
 export default function Shows() {
 	const [rndShows, setrndShows] = useState<hakflixShow[] | []>();
 
-	useEffect(() => {
-		console.log('SHOWS');
-		if (shows) setrndShows(shuffle(shows));
-	}, []);
+	// useEffect(() => {
+	// 	console.log('SHOWS');
+	// 	if (shows) setrndShows(shuffle(shows));
+	// }, []);
 
 	return (
 		<div className='absolute px-14 max-sm:px-8 flex flex-col popular-titles w-full'>

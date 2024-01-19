@@ -27,10 +27,10 @@ const NetflixSans = localFont({
 });
 
 export default function Home() {
-	useEffect(() => {
-		console.log('HOME');
-		document.body.style.overflow = 'unset';
-	});
+	// useEffect(() => {
+	// 	console.log('HOME');
+	// 	document.body.style.overflow = 'unset';
+	// });
 
 	return (
 		<div className='h-full relative'>
