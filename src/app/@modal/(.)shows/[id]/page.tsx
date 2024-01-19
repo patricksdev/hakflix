@@ -14,7 +14,7 @@ export default function Page({ params: { id } }: { params: { id: string } }) {
 	useEffect(() => {
 		setShow(shows.find((show) => show.id.toString() == id));
 		document.body.style.overflow = 'hidden';
-	}, [show]);
+	}, [show, id]);
 
 	function redirectHome() {
 		document.body.style.overflow = 'unset';
