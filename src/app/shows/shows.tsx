@@ -24,6 +24,7 @@ export default function Shows() {
 	const [rndShows, setrndShows] = useState<hakflixShow[] | []>();
 
 	useEffect(() => {
+		console.log('SHOWS');
 		if (shows) setrndShows(shuffle(shows));
 	}, []);
 
