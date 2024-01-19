@@ -7,6 +7,8 @@ import info from '../../public/icons/info.svg';
 import Link from 'next/link';
 
 export default function FeaturedFilm() {
+	const videoLink = 'https://youtu.be/gg2ljMRu5fQ';
+
 	return (
 		<div className="relative w-full">
 			<div className="dark-overlay h-[100%] w-[100%]"></div>
@@ -31,7 +33,7 @@ export default function FeaturedFilm() {
 					</div>
 					<div className="flex flex-row gap-4">
 						<Link
-							href="https://youtube.com"
+							href={videoLink}
 							target="_blank"
 						>
 							<div className="flex gap-4 items-center button primary">
@@ -47,7 +49,7 @@ export default function FeaturedFilm() {
 						</Link>
 
 						<Link
-							href="https://youtube.com"
+							href={videoLink}
 							target="_blank"
 						>
 							<div className="flex gap-4 items-center button secondary">

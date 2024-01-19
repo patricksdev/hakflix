@@ -33,15 +33,15 @@ export default function Home() {
 	});
 
 	return (
-		<div className='h-full relative'>
+		<div className="h-full relative">
 			<div>
 				<Navigation />
 				<FeaturedFilm />
 				<div
-					className='content w-full h-full relative z-10 -mt-[7%] max-sm:-mt-[22%]'
-					id='popular'
+					className="content w-full h-[60vh] relative z-10 -mt-[7%] max-sm:-mt-[22%]"
+					id="popular"
 				>
-					<div className='titles-overlay absolute'></div>
+					<div className="titles-overlay absolute"></div>
 					<Shows />
 				</div>
 			</div>
