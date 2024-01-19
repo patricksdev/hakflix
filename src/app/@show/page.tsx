@@ -1,7 +1,7 @@
 'use client';
 import { useRouter } from 'next/navigation';
-import { hakflixShow } from '../../../public/shows/shows';
-import shows from '../../../public/shows/shows';
+import { hakflixShow } from '../../../../public/shows/shows';
+import shows from '../../../../public/shows/shows';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import close from '../../../public/icons/close.svg';
@@ -9,18 +9,19 @@ import { useRef } from 'react';
 
 import { useSearchParams } from 'next/navigation';
 
-export default function ShowDetail() {
+export default function Page() {
+	console.log('HILLFE');
+	const router = useRouter();
 	const searchParams = useSearchParams();
 
 	const [show, setshow] = useState<hakflixShow>();
-
-	const router = useRouter();
-	const query = searchParams.get('show');
-	console.log(query);
 	const dialogRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
+		const query = searchParams.get('show');
+
 		async function findShow() {
+			const show = shows.find((show) => show.id.toString() == query);
 			setshow(shows.find((show) => show.id.toString() == query));
 		}
 		if (query) {
