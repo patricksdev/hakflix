@@ -5,7 +5,6 @@ import featured_film_title from '../../public/images/featured_film_title.svg';
 import play from '../../public/icons/play.svg';
 import info from '../../public/icons/info.svg';
 import Link from 'next/link';
-import { Metadata } from 'next';
 
 export default function FeaturedFilm() {
 	return (
