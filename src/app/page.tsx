@@ -1,13 +1,9 @@
 'use client';
-import Image from 'next/image';
 import FeaturedFilm from './featured-film';
 import localFont from 'next/font/local';
-import { Metadata } from 'next';
 import Navigation from './navigation';
-import Posters from './shows/posters';
-import ShowDetail from './shows/show-detail';
-import { useSearchParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import Shows from './shows/shows';
+import { useEffect } from 'react';
 import Footer from './footer';
 
 const NetflixSans = localFont({
@@ -31,31 +27,22 @@ const NetflixSans = localFont({
 });
 
 export default function Home() {
-	const [query, setQuery] = useState<string | null>();
-
-	const searchParams = useSearchParams();
-
 	useEffect(() => {
-		setQuery(searchParams.get('show'));
-	}, [searchParams]);
-
-	useEffect(() => {
+		console.log('HOME');
 		document.body.style.overflow = 'unset';
 	});
 
 	return (
-		<div className="h-full relative">
-			{query && <ShowDetail showId={query} />}
-
+		<div className='h-full relative'>
 			<div>
 				<Navigation />
 				<FeaturedFilm />
 				<div
-					className="content w-full h-full relative z-10 -mt-[7%] max-sm:-mt-[22%]"
-					id="popular"
+					className='content w-full h-full relative z-10 -mt-[7%] max-sm:-mt-[22%]'
+					id='popular'
 				>
-					<div className="titles-overlay absolute"></div>
-					<Posters />
+					<div className='titles-overlay absolute'></div>
+					<Shows />
 				</div>
 			</div>
 			<Footer />

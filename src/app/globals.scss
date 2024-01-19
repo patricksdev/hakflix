@@ -107,3 +107,25 @@ body {
 .heart-color {
 	color: #e25555;
 }
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+	scrollbar-width: auto;
+	scrollbar-color: #f0f0f0 #181818;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+	width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+	background: #181818;
+}
+
+*::-webkit-scrollbar-thumb {
+	background-color: #f0f0f0;
+	border-radius: 5px;
+	border: 1px solid #ffffff;
+}
