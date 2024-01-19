@@ -41,7 +41,7 @@ export default function Home() {
 					id='popular'
 				>
 					<div className='titles-overlay absolute'></div>
-					{/* <Shows /> */}
+					<Shows />
 				</div>
 			</div>
 			<Footer />

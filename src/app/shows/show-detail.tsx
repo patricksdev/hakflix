@@ -11,15 +11,13 @@ import { useSearchParams } from 'next/navigation';
 
 export default function ShowDetail() {
 	const searchParams = useSearchParams();
-
+	const router = useRouter();
+	const dialogRef = useRef<HTMLDivElement>(null);
 	const [show, setshow] = useState<hakflixShow>();
 
-	const router = useRouter();
-	const query = searchParams.get('show');
-	console.log(query);
-	const dialogRef = useRef<HTMLDivElement>(null);
-
 	useEffect(() => {
+		const query = searchParams.get('show');
+
 		async function findShow() {
 			setshow(shows.find((show) => show.id.toString() == query));
 		}
