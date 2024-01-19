@@ -238,7 +238,7 @@ const shows: hakflixShow[] = [
 		cast: 'Markus Reis',
 		writtenBy: 'Maximilian Grätz',
 		description: markusText,
-		genres: ['Stand-up-Comedy', 'Für Kinder'],
+		genres: ['Stand-up-Comedy', 'Chicken Nuggets'],
 	},
 	{
 		id: 17,

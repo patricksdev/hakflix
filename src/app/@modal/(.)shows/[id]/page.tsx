@@ -11,11 +11,11 @@ export default function Page({ params: { id } }: { params: { id: string } }) {
 	const router = useRouter();
 	const dialogRef = useRef<HTMLDivElement>(null);
 
-	// useEffect(() => {
-	// 	console.log('DETAIL PAGE');
-	// 	setShow(shows.find((show) => show.id.toString() == id));
-	// 	document.body.style.overflow = 'hidden';
-	// }, [show, id]);
+	useEffect(() => {
+		console.log('DETAIL PAGE');
+		setShow(shows.find((show) => show.id.toString() == id));
+		document.body.style.overflow = 'hidden';
+	}, [show, id]);
 
 	function redirectHome() {
 		document.body.style.overflow = 'unset';
