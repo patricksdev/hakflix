@@ -1,7 +1,6 @@
 'use client';
-
-import ShowDetail from '@/app/shows/showDetail';
+import showDetail from '../../../shows/showDetail';
 
 export default function Page({ params: { id } }: { params: { id: string } }) {
-	return ShowDetail({ params: { id } });
+	return showDetail({ params: { id } });
 }
