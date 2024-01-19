@@ -1,7 +1,7 @@
 'use client';
 import { useRouter } from 'next/navigation';
-import { hakflixShow } from '../../../../public/shows/shows';
-import shows from '../../../../public/shows/shows';
+import { hakflixShow } from '../../../public/shows/shows';
+import shows from '../../../public/shows/shows';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import close from '../../../public/icons/close.svg';
