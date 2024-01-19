@@ -2,7 +2,7 @@
 import FeaturedFilm from './featured-film';
 import localFont from 'next/font/local';
 import Navigation from './navigation';
-import Shows from './shows/page';
+import Shows from './shows/shows';
 import { useEffect } from 'react';
 import Footer from './footer';
 
