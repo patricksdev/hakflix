@@ -28,22 +28,19 @@ const NetflixSans = localFont({
 
 export default function Home() {
 	useEffect(() => {
-		console.log('HOME');
 		document.body.style.overflow = 'unset';
 	});
 
 	return (
 		<div className="h-full relative">
-			<div>
-				<Navigation />
-				<FeaturedFilm />
-				<div
-					className="content w-full h-[60vh] relative z-10 -mt-[7%] max-sm:-mt-[22%]"
-					id="popular"
-				>
-					<div className="titles-overlay absolute"></div>
-					<Shows />
-				</div>
+			<Navigation />
+			<FeaturedFilm />
+			<div
+				className="w-full h-full relative z-10 -mt-[7%] max-sm:-mt-[22%]"
+				id="popular"
+			>
+				<div className="titles-overlay absolute"></div>
+				<Shows />
 			</div>
 			<Footer />
 		</div>
