@@ -1,4 +1,3 @@
-'use client';
 import { useRouter } from 'next/navigation';
 import { hakflixShow } from '../../../public/shows/shows';
 import shows from '../../../public/shows/shows';
@@ -7,27 +6,20 @@ import Image from 'next/image';
 import close from '../../../public/icons/close.svg';
 import { useRef } from 'react';
 
-import { useSearchParams } from 'next/navigation';
-
-export default function ShowDetail() {
-	const searchParams = useSearchParams();
-
+export default function ShowDetail(props: any) {
 	const [show, setshow] = useState<hakflixShow>();
 
 	const router = useRouter();
-	const query = searchParams.get('show');
-	console.log(query);
 	const dialogRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
 		async function findShow() {
-			setshow(shows.find((show) => show.id.toString() == query));
+			setshow(shows.find((show) => show.id == props.showId));
 		}
-		if (query) {
-			findShow();
-			document.body.style.overflow = 'hidden';
-		}
-	});
+
+		findShow();
+		document.body.style.overflow = 'hidden';
+	}, []);
 
 	function redirectHome() {
 		router.back();
