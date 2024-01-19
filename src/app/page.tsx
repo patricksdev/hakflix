@@ -1,14 +1,9 @@
 'use client';
-import Image from 'next/image';
-import { Suspense } from 'react';
 import FeaturedFilm from './featured-film';
 import localFont from 'next/font/local';
-import { Metadata } from 'next';
 import Navigation from './navigation';
 import Posters from './shows/posters';
-import ShowDetail from './shows/show-detail';
-import { useSearchParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import Footer from './footer';
 
 const NetflixSans = localFont({
@@ -32,22 +27,12 @@ const NetflixSans = localFont({
 });
 
 export default function Home() {
-	const [query, setQuery] = useState<string | null>();
-
-	const searchParams = useSearchParams();
-
-	useEffect(() => {
-		setQuery(searchParams.get('show'));
-	}, [searchParams]);
-
 	useEffect(() => {
 		document.body.style.overflow = 'unset';
 	});
 
 	return (
 		<div className='h-full relative'>
-			<Suspense>{query && <ShowDetail showId={query} />}</Suspense>
-
 			<div>
 				<Navigation />
 				<FeaturedFilm />
