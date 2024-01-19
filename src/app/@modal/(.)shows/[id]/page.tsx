@@ -13,12 +13,11 @@ export default function Page({ params: { id } }: { params: { id: string } }) {
 
 	useEffect(() => {
 		setShow(shows.find((show) => show.id.toString() == id));
-		if (show) {
-			document.body.style.overflow = 'hidden';
-		}
+		document.body.style.overflow = 'hidden';
 	}, []);
 
 	function redirectHome() {
+		document.body.style.overflow = 'unset';
 		router.back();
 	}
 
