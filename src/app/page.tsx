@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/image';
+import { Suspense } from 'react';
 import FeaturedFilm from './featured-film';
 import localFont from 'next/font/local';
 import { Metadata } from 'next';
@@ -44,17 +45,17 @@ export default function Home() {
 	});
 
 	return (
-		<div className="h-full relative">
-			{query && <ShowDetail showId={query} />}
+		<div className='h-full relative'>
+			<Suspense>{query && <ShowDetail showId={query} />}</Suspense>
 
 			<div>
 				<Navigation />
 				<FeaturedFilm />
 				<div
-					className="content w-full h-full relative z-10 -mt-[7%] max-sm:-mt-[22%]"
-					id="popular"
+					className='content w-full h-full relative z-10 -mt-[7%] max-sm:-mt-[22%]'
+					id='popular'
 				>
-					<div className="titles-overlay absolute"></div>
+					<div className='titles-overlay absolute'></div>
 					<Posters />
 				</div>
 			</div>
