@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import hakflix from '../../public/logos/hakflix.svg';
+import Link from 'next/link';
 
 export default function Navigation() {
 	return (
@@ -10,13 +11,8 @@ export default function Navigation() {
 				className="h-7 w-auto"
 			/>
 			<div className="flex text-sm gap-5">
-				<a
-					href="#"
-					className="font-medium"
-				>
-					Home
-				</a>
-				<a href="#">Popular</a>
+				<Link href="#">Home</Link>
+				<Link href="#popular">Popular</Link>
 			</div>
 		</div>
 	);

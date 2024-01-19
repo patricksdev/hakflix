@@ -7,6 +7,8 @@ import Navigation from './navigation';
 import Posters from './shows/posters';
 import ShowDetail from './shows/show-detail';
 import { useSearchParams } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import Footer from './footer';
 
 const NetflixSans = localFont({
 	src: [
@@ -29,18 +31,34 @@ const NetflixSans = localFont({
 });
 
 export default function Home() {
+	const [query, setQuery] = useState<string | null>();
+
 	const searchParams = useSearchParams();
 
-	return (
-		<div className='pb-80'>
-			<ShowDetail showId={searchParams.get('show')} />
+	useEffect(() => {
+		setQuery(searchParams.get('show'));
+	}, [searchParams]);
 
-			<Navigation />
-			<FeaturedFilm />
-			<div className='content w-full absolute z-10 -mt-[7%] max-sm:-mt-[22%]'>
-				<div className='titles-overlay absolute'></div>
-				<Posters />
+	useEffect(() => {
+		document.body.style.overflow = 'unset';
+	});
+
+	return (
+		<div className="h-full relative">
+			{query && <ShowDetail showId={query} />}
+
+			<div>
+				<Navigation />
+				<FeaturedFilm />
+				<div
+					className="content w-full h-full relative z-10 -mt-[7%] max-sm:-mt-[22%]"
+					id="popular"
+				>
+					<div className="titles-overlay absolute"></div>
+					<Posters />
+				</div>
 			</div>
+			<Footer />
 		</div>
 	);
 }
