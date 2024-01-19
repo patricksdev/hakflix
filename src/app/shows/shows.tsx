@@ -89,7 +89,7 @@ export default function Shows() {
 						))}
 				</Swiper>
 			</div>
-			<div className="footer w-full h-fit flex justify-center items-center bottom-0 pt-20 pb-20 px-14">
+			<div className="footer w-full h-fit flex justify-center items-center bottom-0 pt-20 pb-20 px-14 max-sm:px-8">
 				<div className="text-center flex flex-col gap-6 max-sm:gap-6 items-center">
 					<p className="text-sm text-center flex w-2/4 max-sm:w-full leading-normal">
 						Hakflix ist eine rein fiktive und satirische Webseite, welche

@@ -42,7 +42,6 @@ export default function Home() {
 				<div className="titles-overlay absolute"></div>
 				<Shows />
 			</div>
-			{/* <Footer /> */}
 		</div>
 	);
 }
